@@ -56,7 +56,6 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   box-shadow:0 10px 24px rgba(224,72,107,.32),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .15s ease
 }
 .btn:active{transform:scale(.96)}
-.btn.ghost{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;border:1.5px solid rgba(255,255,255,.55)}
 
 /* ---------- lock ---------- */
 .lock{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px 18px}
@@ -103,8 +102,6 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .tile.big b{color:var(--wine)}
 .milestone{margin:12px 0 0;font-size:14px;color:var(--muted)}
 .milestone b{color:var(--ink)}
-.official{display:none;margin:12px auto 0;padding:7px 14px;border-radius:999px;background:var(--wine);color:#fff;font-size:13px;font-weight:800;width:max-content;max-width:100%}
-.official.show{display:block}
 
 /* ---------- sections ---------- */
 .sec{margin-top:56px}
@@ -203,34 +200,6 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .progress .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--rose));border-radius:9px;transition:width .4s ease}
 .progress span{font-size:14px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
 
-/* ---------- the question ---------- */
-.ask{position:relative;overflow:hidden;padding:30px 18px 26px;text-align:center;color:#fff;border-radius:26px;
-  background:radial-gradient(90% 60% at 50% 0%, rgba(255,255,255,.16), transparent 60%),linear-gradient(170deg,#c2335a,var(--wine));
-  box-shadow:0 24px 50px rgba(158,31,69,.32)}
-.ask .eyebrow{color:#ffd0da}
-.ask-heart{width:76px;height:76px;margin:10px auto 0;display:block;animation:beat 1.4s ease-in-out infinite}
-.ask h2{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(32px,9.6vw,40px);line-height:1.08;margin:10px 0 0;text-wrap:balance}
-.zone{position:relative;height:190px;display:flex;align-items:center;justify-content:center;gap:14px}
-#yes{background:#fff;color:var(--wine);box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .25s cubic-bezier(.3,1.5,.5,1)}
-#no{transition:left .25s ease,top .25s ease;white-space:nowrap}
-.ask-done{display:none;margin:18px 0 4px}
-.ask-done p{font-family:var(--hand);font-size:36px;line-height:1.1;margin:0}
-.ask-done small{display:inline-block;margin-top:10px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.18);font-weight:800;font-size:13px}
-.ask.done .zone{display:none}
-.ask.done .ask-done{display:block}
-
-/* ---------- yes overlay ---------- */
-.yay{position:fixed;inset:0;z-index:80;display:none;place-items:center;padding:24px;background:rgba(251,238,238,.94);
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);text-align:center}
-.yay.show{display:grid;animation:fade .4s ease both}
-@keyframes fade{from{opacity:.4}to{opacity:1}}
-.yay-in{max-width:360px;display:grid;gap:8px;justify-items:center}
-.yay-heart{width:120px;height:120px;animation:beat 1.2s ease-in-out infinite}
-.yay h2{font-family:var(--hand);font-size:66px;line-height:1;margin:4px 0 0;color:var(--wine)}
-.yay p{margin:0;font-family:var(--display);font-style:italic;font-size:24px;line-height:1.2}
-.yay .date{margin-top:6px;padding:7px 16px;border-radius:999px;background:var(--wine);color:#fff;font-weight:800;font-size:14px;font-variant-numeric:tabular-nums}
-.yay .btn{margin-top:14px}
-
 footer{margin-top:56px;text-align:center;color:var(--muted);font-size:14px}
 footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:block}
 
@@ -255,9 +224,9 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
 <section class="lock" id="lock">
   <form class="lock-card" id="lockForm" novalidate>
     <svg class="lock-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.7 1.2 5.3 3.1 1.6-1.9 3.2-3.1 5.3-3.1 3.7 0 5.8 3.8 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#e0486b"/></svg>
-    <span class="eyebrow">Чамд нэг зүйл байна</span>
+    <span class="eyebrow">Чамдаа</span>
     <h1 class="lock-title">Чамд зориулав</h1>
-    <p class="lock-sub">Нээхийн тулд бидний анх уулзсан өдрийг бичээрэй.</p>
+    <p class="lock-sub">Хоёулаа анх уулзсан өдрөө санадаг уу? Тэр өдрөө бичээд нээгээрэй.</p>
     <label class="lock-label" for="pass">Анх уулзсан өдөр</label>
     <input id="pass" name="pass" type="text" inputmode="decimal" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ЖЖЖЖ.СС.ӨӨ" aria-describedby="lockMsg">
     <button class="btn" type="submit" id="unlockBtn">Нээх</button>
@@ -288,7 +257,7 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
   </header>
 
   <section class="together" aria-labelledby="togetherTitle">
-    <h2 id="togetherTitle">Бид хамт байгаа нь</h2>
+    <h2 id="togetherTitle">Анх уулзсанаас хойш</h2>
     <p class="since" id="since"></p>
     <div class="tiles">
       <div class="tile big"><b id="tDays">0</b><span>өдөр</span></div>
@@ -297,13 +266,12 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
       <div class="tile"><b id="tSecs">00</b><span>секунд</span></div>
     </div>
     <p class="milestone" id="milestone"></p>
-    <span class="official" id="official"></span>
   </section>
 
   <section class="sec" aria-labelledby="letterTitle">
     <div class="sec-head">
       <span class="eyebrow">Захидал</span>
-      <h2 id="letterTitle">Чамд бичсэн захидал</h2>
+      <h2 id="letterTitle">Чамдаа бичсэн захидал</h2>
     </div>
     <div class="env-wrap">
       <button class="env" id="env" aria-label="Захидлыг нээх">
@@ -313,12 +281,12 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
         <span class="env-flap"></span>
         <span class="env-seal"><svg viewBox="0 0 24 24"><path d="M12 20s-6.5-4-8.3-8C2.4 9 4.2 5.8 7.4 5.8c1.8 0 3.2 1 4.6 2.7 1.4-1.7 2.8-2.7 4.6-2.7 3.2 0 5 3.2 3.7 6.2C18.5 16 12 20 12 20z" fill="#fff"/></svg></span>
       </button>
-      <span class="env-label" id="envLabel">Дугтуйг товшоод нээгээрэй</span>
+      <span class="env-label" id="envLabel">Дугтуйн дээр дараад захидлаа нээгээрэй</span>
     </div>
     <article class="letter" id="letter" aria-live="polite">
       <p id="letterText"></p>
       <div class="sign" id="letterSign"></div>
-      <span class="skip" id="letterSkip">Товшвол бүтнээр нь харуулна</span>
+      <span class="skip" id="letterSkip">Бүтнээр нь унших</span>
     </article>
   </section>
 
@@ -326,7 +294,7 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
     <div class="sec-head">
       <span class="eyebrow">Яагаад гэвэл</span>
       <h2 id="reasonsTitle">Чамд хайртай 12 шалтгаан</h2>
-      <p class="hint">Картыг товшиж эргүүлээрэй. Дараагийн картыг үзэхийн тулд хажуу тийш гүйлгээрэй.</p>
+      <p class="hint">Карт дээр дараад ард нь юу бичсэнийг хараарай. Дараагийнхыг үзэхдээ хажуу тийш гүйлгээрэй.</p>
     </div>
     <div class="carousel" id="carousel" tabindex="0" aria-label="Хайртай шалтгаанууд"></div>
     <div class="car-nav">
@@ -339,7 +307,7 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
   <section class="sec" aria-labelledby="storyTitle">
     <div class="sec-head">
       <span class="eyebrow">Бидний түүх</span>
-      <h2 id="storyTitle">Хамтдаа туулсан замнал</h2>
+      <h2 id="storyTitle">Хамтдаа бүтээсэн дурсамжууд</h2>
     </div>
     <ol class="timeline" id="timeline"></ol>
   </section>
@@ -347,42 +315,16 @@ footer .sig{font-family:var(--hand);font-size:32px;color:var(--wine);display:blo
   <section class="sec" aria-labelledby="wishTitle">
     <div class="sec-head">
       <span class="eyebrow">Хүсэл</span>
-      <h2 id="wishTitle">2027 онд хамтдаа хийхийг хүссэн зүйлс</h2>
+      <h2 id="wishTitle">2027 онд хоёулаа юу хийх вэ?</h2>
     </div>
     <div class="progress"><div class="bar"><i id="wishBar"></i></div><span id="wishCount">0 / 0</span></div>
     <div class="card wishes" id="wishes"></div>
   </section>
 
-  <section class="sec" aria-labelledby="askTitle">
-    <div class="ask" id="ask">
-      <span class="eyebrow">Одоо тэр асуулт</span>
-      <svg class="ask-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.7 1.2 5.3 3.1 1.6-1.9 3.2-3.1 5.3-3.1 3.7 0 5.8 3.8 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#fff"/></svg>
-      <h2 id="askTitle"></h2>
-      <div class="zone" id="zone">
-        <button class="btn" id="yes">Тийм</button>
-        <button class="btn ghost" id="no">Үгүй</button>
-      </div>
-      <div class="ask-done">
-        <p>Бид албан ёсоор хос боллоо ♥</p>
-        <small id="askDate"></small>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    <span class="sig">Чамдаа хайртай шүү, хайраа. ❤️</span>
+    <span class="sig">Хайраа, чамдаа хайртай шүү. ❤️</span>
   </footer>
 </main>
-
-<div class="yay" id="yay" role="dialog" aria-modal="true" aria-labelledby="yayTitle">
-  <div class="yay-in">
-    <svg class="yay-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.7 1.2 5.3 3.1 1.6-1.9 3.2-3.1 5.3-3.1 3.7 0 5.8 3.8 4.3 7.3C19.5 16.4 12 21 12 21z" fill="#e0486b"/></svg>
-    <h2 id="yayTitle">Тийм гэлээ!</h2>
-    <p>Өнөөдрөөс эхлэн бид албан ёсоор хос.<br>Чамдаа хайртай шүү.</p>
-    <span class="date" id="yayDate"></span>
-    <button class="btn" id="yayClose">♥ Хаах</button>
-  </div>
-</div>
 
 <script>
 /* ---------- helpers ---------- */
@@ -394,7 +336,6 @@ const store = {
   set(k,v){ try { localStorage.setItem(k,v); return true; } catch(e){ return false; } }
 };
 function parseDate(s){ const [y,m,d] = s.split("-").map(Number); return new Date(y, (m||1)-1, d||1); }
-function fmt(d){ return d.getFullYear() + "." + pad(d.getMonth() + 1) + "." + pad(d.getDate()); }
 function heartPath(ctx, s){
   ctx.beginPath();
   ctx.moveTo(0, s * .3);
@@ -471,15 +412,7 @@ const confetti = (function(){
   }
   const W = () => innerWidth, H = () => innerHeight;
   return {
-    pop(x, y, n){ add(x, y, -Math.PI / 2, Math.PI * 2, 6, n || 40); },
-    party(){
-      const k = reduce ? .3 : 1;
-      add(W() / 2, H() * .4, -Math.PI / 2, Math.PI * 2, 9, Math.round(110 * k));
-      [0, 450, 900].forEach(t => setTimeout(() => {
-        add(-10, H() * .85, -Math.PI / 3.2, .7, 17, Math.round(60 * k));
-        add(W() + 10, H() * .85, -Math.PI + Math.PI / 3.2, .7, 17, Math.round(60 * k));
-      }, t));
-    }
+    pop(x, y, n){ add(x, y, -Math.PI / 2, Math.PI * 2, 6, n || 40); }
   };
 })();
 
@@ -516,7 +449,6 @@ function boot(CONFIG){
   $("fromTo").textContent = CONFIG.me + "гээс " + CONFIG.herShort + "д";
   $("initials").textContent = CONFIG.me.charAt(0) + " + " + CONFIG.herShort.charAt(0);
   $("letterSign").textContent = CONFIG.letterSign || CONFIG.me;
-  $("askTitle").textContent = CONFIG.question;
   $("since").textContent = CONFIG.startDate.replace(/-/g, ".") + "-аас хойш";
 
   /* ---------- together counter ---------- */
@@ -531,12 +463,6 @@ function boot(CONFIG){
     $("tHours").textContent = pad(h); $("tMins").textContent = pad(m); $("tSecs").textContent = pad(Math.floor(ms / 1e3));
     const next = (Math.floor(days / 100) + 1) * 100;
     $("milestone").innerHTML = "Бидний <b>" + next + " дахь</b> өдөр хүртэл <b>" + (next - days) + "</b> хоног үлдлээ";
-    const off = store.get("cw-official");
-    if (off) {
-      const od = Math.floor((now - parseDate(off)) / 864e5);
-      $("official").textContent = od <= 0 ? "Өнөөдөр албан ёсоор хос боллоо ♥" : "Албан ёсоор хос болоод " + od + " хоног ♥";
-      $("official").classList.add("show");
-    }
   }
 
   /* ---------- envelope + letter ---------- */
@@ -639,54 +565,6 @@ function boot(CONFIG){
     update();
   })();
 
-  /* ---------- the question ---------- */
-  (function ask(){
-    const zone = $("zone"), yes = $("yes"), no = $("no");
-    const lines = ["Үгүй", "Итгэлтэй юу?", "Дахиад бодоорой", "Үгүй ээ, болохгүй", "Сайн бодсон уу?", "За за, тийм ♥"];
-    let tries = 0;
-    const saved = store.get("cw-official");
-    if (saved) markDone(saved);
-    function markDone(d){
-      $("ask").classList.add("done");
-      $("askDate").textContent = "Тийм гэсэн өдөр: " + d.replace(/-/g, ".");
-    }
-    function dodge(e){
-      if (tries >= lines.length - 1) return;
-      if (e) e.preventDefault();
-      tries++;
-      no.textContent = lines[tries];
-      yes.style.transform = "scale(" + Math.min(1 + tries * .14, 1.75) + ")";
-      const zw = zone.clientWidth, zh = zone.clientHeight;
-      no.style.position = "absolute";
-      const bw = no.offsetWidth, bh = no.offsetHeight;
-      const yr = yes.getBoundingClientRect(), zr = zone.getBoundingClientRect();
-      let x, y, guard = 0;
-      do { x = Math.random() * (zw - bw); y = Math.random() * (zh - bh); guard++; }
-      while (guard < 30 && x < yr.right - zr.left + 10 && x + bw > yr.left - zr.left - 10 && y < yr.bottom - zr.top + 10 && y + bh > yr.top - zr.top - 10);
-      no.style.left = x + "px"; no.style.top = y + "px";
-    }
-    no.addEventListener("touchstart", dodge, { passive: false });
-    no.addEventListener("mouseenter", () => { if (matchMedia("(hover:hover)").matches) dodge(); });
-    no.addEventListener("click", e => { if (tries >= lines.length - 1) accept(); else dodge(e); });
-    yes.addEventListener("click", accept);
-    function accept(){
-      const now = new Date();
-      const iso = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
-      if (!store.get("cw-official")) store.set("cw-official", iso);
-      const d = store.get("cw-official") || iso;
-      markDone(d);
-      $("yayDate").textContent = d.replace(/-/g, ".");
-      $("yay").classList.add("show");
-      confetti.party();
-      tick();
-      setTimeout(() => $("yayClose").focus(), 50);
-    }
-    $("yayClose").addEventListener("click", () => {
-      $("yay").classList.remove("show");
-      $("ask").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
-    });
-  })();
-
   tick(); setInterval(tick, 1000);
 }
 
@@ -713,7 +591,7 @@ function openSite(cfg){
 }
 async function tryUnlock(pw, silent){
   try { const cfg = await decrypt(pw); store.set("cw-key", pw); openSite(cfg); return true; }
-  catch (e) { if (!silent) fail("Буруу байна. Дахиад оролдоорой ♥"); return false; }
+  catch (e) { if (!silent) fail("Өдөр нь таарсангүй. Дахиад нэг санаад үзээрэй ♥"); return false; }
 }
 function fail(text){
   const card = $("lockForm"); $("lockMsg").textContent = text;
